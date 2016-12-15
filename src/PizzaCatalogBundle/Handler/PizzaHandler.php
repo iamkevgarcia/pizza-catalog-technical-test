@@ -3,6 +3,7 @@
 namespace PizzaCatalogBundle\Handler;
 
 use PizzaCatalogBundle\Entity\Pizza;
+use PizzaCatalogBundle\Form\Type\PizzaType;
 
 class PizzaHandler extends BaseHandler
 {
@@ -14,5 +15,12 @@ class PizzaHandler extends BaseHandler
     public function getAll()
     {
         return $this->repository->findAll();
+    }
+
+    public function update(Pizza $pizza)
+    {
+        $this->em->persist($pizza);
+        $this->em->flush($pizza);
+        return $pizza;
     }
 }

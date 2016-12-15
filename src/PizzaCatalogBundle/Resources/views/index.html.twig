@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+<title>{% block title %}Pizza App{% endblock %}</title>
+
+{% block body %}
+    <div id="sidebar">
+        {% block sidebar %}
+            <ul>
+                <li><a href="/pizzas">Pizza's</a></li>
+                <li><a href="/ingredients">Ingredients</a></li>
+            </ul>
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.sellingPrice) }}
+    {{ form_row(form.Ingredients) }}
+    <button class="btn btn-default" type="submit" name="button">Submit</button>
+{{ form_end(form)}}

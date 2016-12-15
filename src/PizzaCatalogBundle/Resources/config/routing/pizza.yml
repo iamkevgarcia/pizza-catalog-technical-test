@@ -8,3 +8,10 @@ get_pizza_by_id:
     methods:  [GET]
     requirements:
         pizza_id: \d+
+
+post_pizza:
+    path:  /update/{id}
+    defaults: { _controller: "PizzaCatalogBundle:Pizza:update", _format: html }
+    methods:  [POST]
+    requirements:
+        id: \d+

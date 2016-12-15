@@ -1,8 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'PizzaCatalogBundle::base.html.twig' %}
 
 {% block stylesheets %}
     {{ parent() }}
+    <link href="{{ asset('public/css/multi-select.css') }}" rel="stylesheet" />
+{% endblock %}
 
+{% block body %}
     <h2>{{pizza.name}}</h2>
-
+    {{ include('PizzaCatalogBundle:Pizza:form.html.twig')}}
 {% endblock %}
