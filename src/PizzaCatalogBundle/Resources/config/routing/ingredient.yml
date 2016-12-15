@@ -1,0 +1,10 @@
+get_ingredients:
+  path: /
+  defaults: { _controller: PizzaCatalogBundle:Ingredient:get, _format: html }
+
+get_ingredient_by_id:
+    path:  /get/{id}
+    defaults: { _controller: "PizzaCatalogBundle:Ingredient:getById", _format: html }
+    methods:  [GET]
+    requirements:
+        pizza_id: \d+

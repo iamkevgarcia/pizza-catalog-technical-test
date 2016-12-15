@@ -1,0 +1,11 @@
+index:
+    path: /
+    defaults: { _controller: PizzaCatalogBundle:Index:index, _format: html }
+
+PizzaCatalogBundle_pizza:
+    resource: "@PizzaCatalogBundle/Resources/config/routing/pizza.yml"
+    prefix:   /pizzas
+
+PizzaCatalogBundle_ingredient:
+    resource: "@PizzaCatalogBundle/Resources/config/routing/ingredient.yml"
+    prefix:   /ingredients

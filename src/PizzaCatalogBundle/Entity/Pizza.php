@@ -8,8 +8,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass="PizzaCatalogBundle\Entity\Repository\PizzaRepository")
  * @ORM\Table(name="pizza")
- * @ORM\Entity(repositoryClass="PizzaCatalogBundle\Entity\Repository\PizzaRepostory")
+ * @ORM\Entity
  */
 class Pizza
 {

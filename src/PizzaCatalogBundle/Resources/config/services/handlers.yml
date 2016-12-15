@@ -1,0 +1,18 @@
+parameters:
+    pizza_catalog_bundle.pizza.handler.class: PizzaCatalogBundle\Handler\PizzaHandler
+    pizza_catalog_bundle.pizza.entity.class: PizzaCatalogBundle\Entity\Pizza
+    pizza_catalog_bundle.ingredient.handler.class: PizzaCatalogBundle\Handler\IngredientHandler
+    pizza_catalog_bundle.ingredient.entity.class: PizzaCatalogBundle\Entity\Ingredient
+
+services:
+    pizza_catalog_bundle.pizza.handler:
+        class: %pizza_catalog_bundle.pizza.handler.class%
+        arguments: [ "@doctrine.orm.entity_manager", %pizza_catalog_bundle.pizza.entity.class%, "@form.factory" ]
+        tags:
+            -  { name: pizza_catalog_bundle.pizza.handler, alias: pizza.handler }
+
+    pizza_catalog_bundle.ingredient.handler:
+        class: %pizza_catalog_bundle.ingredient.handler.class%
+        arguments: [ "@doctrine.orm.entity_manager", %pizza_catalog_bundle.ingredient.entity.class%, "@form.factory" ]
+        tags:
+            -  { name: pizza_catalog_bundle.ingredient.handler, alias: ingredient.handler }

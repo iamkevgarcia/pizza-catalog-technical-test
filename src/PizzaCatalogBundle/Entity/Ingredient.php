@@ -7,8 +7,9 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Table(name="ingredient")
  * @ORM\Entity(repositoryClass="PizzaCatalogBundle\Entity\Repository\IngredientRepository")
+ * @ORM\Table(name="ingredient")
+ * @ORM\Entity
  */
 class Ingredient
 {

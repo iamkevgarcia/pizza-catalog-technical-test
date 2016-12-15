@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <h2>Pizza's list: </h2>
+    <ul id="navigation">
+        {% for pizza in pizzas %}
+            <li><a href="{{ path('get_pizza_by_id', {'id': pizza.id}) }}">{{pizza.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
