@@ -19,6 +19,7 @@ class PizzaHandler extends BaseHandler
 
     public function update(Pizza $pizza)
     {
+        $pizza->updateSellingPrice();
         $this->em->persist($pizza);
         $this->em->flush($pizza);
         return $pizza;

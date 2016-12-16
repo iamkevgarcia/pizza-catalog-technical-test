@@ -1,0 +1,20 @@
+src
+└── PizzaCatalogBundle
+    ├── Controller
+    ├── DataFixtures
+    │   ├── Data
+    │   └── ORM
+    ├── Entity
+    │   └── Respository
+    ├── Form
+    │   └── Type
+    ├── Handler
+    └── Resources
+        ├── config
+        │   ├── routing
+        │   └── services
+        └── views
+            ├── Ingredient
+            └── Pizza
+
+17 directories

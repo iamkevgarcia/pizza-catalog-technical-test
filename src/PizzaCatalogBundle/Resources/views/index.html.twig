@@ -1,14 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends 'PizzaCatalogBundle::base.html.twig' %}
 
-<title>{% block title %}Pizza App{% endblock %}</title>
+{% block title %}
+    <title>Pizza App</title>
+{% endblock %}
 
 {% block body %}
-    <div id="sidebar">
-        {% block sidebar %}
+    <h1 class="primary-text">Pizza App</h1>
+    {% block sidebar %}
+        <div id="sidebar">
             <ul>
                 <li><a href="/pizzas">Pizza's</a></li>
                 <li><a href="/ingredients">Ingredients</a></li>
             </ul>
-        {% endblock %}
-    </div>
+        </div>
+    {% endblock %}
+
 {% endblock %}

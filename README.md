@@ -1,14 +1,18 @@
-pizza_catalog
+Pizza Catalog
 =============
 
-Hi! This is an awesome pizza catalog!
+### Requirements
 
+* Symfony 3.2
+* Composer
 
-1.- Create the database in MySQL
-
-<pre>
-mysql -u root -p
-CREATE DATABASE pizza_catalog;
-</pre>
-
-2. 
+1.- Install the dependencies using composer.
+2.- Create the schema and fixtures
+```sh
+php bin/console doctrine:schema:create
+php bin/console doctrine:fixture:load
+```
+3.- run server
+```sh
+php bin/console server:run
+```

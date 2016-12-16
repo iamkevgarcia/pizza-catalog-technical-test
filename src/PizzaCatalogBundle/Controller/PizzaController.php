@@ -17,9 +17,9 @@ class PizzaController extends BaseController
         ]);
     }
 
-    public function getByIdAction(Request $request)
+    public function createCustomForm(Request $request)
     {
-        $form = $this->createForm(
+        return $this->createForm(
             PizzaType::class,
             $this->getHandler('pizza')->get($request->get("id",null)), [
                 'action' => $this->generateUrl('post_pizza', [
@@ -28,32 +28,16 @@ class PizzaController extends BaseController
                 'method' => 'POST'
             ]
         );
-
-        $form->handleRequest($request);
-
-        return $this->render('PizzaCatalogBundle:Pizza:get_pizza.html.twig', [
-            'pizza' => $this->getHandler('pizza')->get($request->get("id",null)),
-            'form' => $form->createView()
-        ]);
     }
 
     public function updateAction(Request $request)
     {
-        $form = $this->createForm(
-            PizzaType::class,
-            $this->getHandler('pizza')->get($request->get("id",null)), [
-                'action' => $this->generateUrl('post_pizza', [
-                    'id' => $request->get("id",null)
-                ]),
-                'method' => 'POST'
-            ]
-        );
-
+        $form = $this->createCustomForm($request);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $pizzaData = $form->getData();
-            $pizzaObj = $this->getHandler('pizza')->update($pizzaData);
+            $pizzaObj = $this->getHandler('pizza')->update($pizzaData);            
             $this->addFlash(
                 'notice',
                 'Your new ingredients were saved!'
@@ -66,6 +50,7 @@ class PizzaController extends BaseController
 
         return $this->render('PizzaCatalogBundle:Pizza:get_pizza.html.twig', array(
             'form' => $form->createView(),
+            'pizza' => $this->getHandler('pizza')->get($request->get("id",null))
         ));
     }
 

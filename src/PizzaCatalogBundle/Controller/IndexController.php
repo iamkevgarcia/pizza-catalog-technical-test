@@ -11,7 +11,7 @@ class IndexController extends Controller
     public function indexAction(Request $request)
     {
         return $this->render(
-            'PizzaCatalogBundle::base.html.twig'
+            'PizzaCatalogBundle::index.html.twig'
         );
     }
 }
